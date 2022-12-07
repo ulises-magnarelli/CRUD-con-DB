@@ -1,0 +1,22 @@
+<%- include('header') -%> 
+    
+<h1>Listado de canciones</h1>
+
+<ul>
+    <% for (let i = 0; i < canciones.length; i++) { %> 
+        <li>
+            <a href="/canciones/<%= canciones[i].id %>">   
+                <p>Titulo de la cancion: <%= canciones[i].titulo %> </p>
+            </a>
+            <p>Duracion en minutos: <%= canciones[i].duracion %></p>
+            <p>Fecha de creacion: <%= canciones[i].created_at %></p>
+            <p>Genero-_id: <%= canciones[i].genero_id %></p>
+            <p>Album_id: <%= canciones[i].album_id %></p> 
+            <p>Artista_id: <%= canciones[i].artista_id %></p> 
+
+
+        </li>
+        <% } %> 
+</ul>
+
+<%- include('footer') -%> 

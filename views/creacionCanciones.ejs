@@ -1,0 +1,65 @@
+<%- include('header') -%> 
+
+        <h1>Subir cancion</h1>
+        <h2>Si no borro la cancion con id:0, no se puede crear la cancion</h2>
+                 <form action="/canciones/crear" method="POST">
+
+                    <div>
+                        <label for="">Titulo:</label>
+                        <input type="text" name="titulo">
+                    </div>
+
+                    <div>
+                        <label for="">Duracion:</label>
+                        <input type="number" name="duracion">
+                    </div>
+
+                    <div>
+                        <label for="">Creada en el dia:</label>
+                        <input type="date" name="created_at">
+                    </div>
+
+                    <div>
+                        <label for="">Album</label>
+                        <select name="album">
+                            <% for (let i = 0; i < albumes.length; i++) {%> 
+                            <option value="<%=albumes[i].id%>">
+                                <%= albumes[i].nombre %> 
+                            </option>
+                            <% } %> 
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="">Artista</label>
+                        <select name="artista">
+                            <% for (let i = 0; i < artistas.length; i++) {%> 
+                            <option value="<%=artistas[i].id%>">
+                                <%= artistas[i].nombre %> 
+                            </option>
+                            <% } %> 
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="">Genero</label>
+                        <select name="genero">
+                            <% for (let i = 0; i < generos.length; i++) {%> 
+                            <option value="<%=generos[i].id%>">
+                                <%= generos[i].name %> 
+                            </option>
+                            <% } %> 
+                        </select>
+                    </div>
+
+
+ 
+
+                    <button type="submit">
+                        Crear
+                    </button>
+                   
+
+                 </form>
+
+<%- include('footer') -%> 

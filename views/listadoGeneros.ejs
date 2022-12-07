@@ -1,0 +1,14 @@
+<%- include('header') -%> 
+    
+<h1>Listado de generos</h1>
+
+<ul>
+    <% for (let i = 0; i < genero.length; i++) { %> 
+        <li>
+        <p>Canciones con genero de <%=genero[i].name%>: <%= genero[i].canciones %>  </p>
+        </li>
+ 
+        <% } %> 
+</ul>
+
+<%- include('footer') -%> 

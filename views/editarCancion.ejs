@@ -1,0 +1,89 @@
+<%- include('header') -%> 
+    
+<h1>Editar cancion</h1>
+<form action="/canciones/editar/<%=canciones.id%>" method="POST">
+
+   <div>
+       <label for="">Titulo:</label>
+       <input type="text" name="titulo" value="<%=canciones.titulo %> ">
+   </div>
+
+   <div>
+       <label for="">Duracion:</label>
+       <input type="number" name="duracion" value="<%=canciones.duracion%> ">
+   </div>
+
+   <div>
+       <label for="">Creada en el dia:</label>
+       <input type="date" name="created_at">
+   </div>
+
+   <div>
+       <label for="">Genero</label>
+       <select name="genero">
+           <% for (let i = 0; i < generos.length; i++) {%> 
+            <% if (generos[i].id == canciones.genero_id) { %> 
+           <option value="<%=generos[i].id%>" selected>
+               <%= generos[i].name %> 
+           </option>
+           <% }else {%>
+            <option value="<%=generos[i].id%>">
+                <%= generos[i].name %> 
+            </option>
+            
+           <% } %> 
+           <% } %> 
+
+       </select>
+   </div>
+
+
+   <div>
+    <label for="">Album</label>
+    <select name="album">
+        <% for (let i = 0; i < albumes.length; i++) {%> 
+         <% if (albumes[i].id == canciones.album_id) { %> 
+        <option value="<%=albumes[i].id%>" selected>
+            <%= albumes[i].nombre %> 
+        </option>
+        <% }else {%>
+         <option value="<%=albumes[i].id%>">
+             <%= albumes[i].nombre %> 
+         </option>
+         
+        <% } %> 
+        <% } %> 
+
+    </select>
+</div>
+
+
+<div>
+    <label for="">Artista</label>
+    <select name="artista">
+        <% for (let i = 0; i < artistas.length; i++) {%> 
+         <% if (artistas[i].id == canciones.artista_id) { %> 
+        <option value="<%=artistas[i].id%>" selected>
+            <%= artistas[i].nombre %> 
+        </option>
+        <% }else {%>
+         <option value="<%=artistas[i].id%>">
+             <%= artistas[i].nombre %> 
+         </option>
+         
+        <% } %> 
+        <% } %> 
+
+    </select>
+</div>
+
+
+
+   <button type="submit">
+       Editar
+   </button>
+  
+
+</form>
+
+<%- include('footer') -%> 
